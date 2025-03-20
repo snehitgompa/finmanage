@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinManage - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://snehithganesh.neocities.org/Fin.png" alt="FinManage Logo">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="expenses.html">Expenses</a></li>
+                    <li><a href="budget.html">Budgeting</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" class="cta-button">Login</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="hero-title">Take Control of Your Finances</h1>
+            <p class="hero-subtitle">Track your expenses, set budgets, and achieve your savings goals.</p>
+            <a href="expenses.html" class="cta-button hero-cta">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">💸</span>
+                <h2>Expense Tracking</h2>
+                <button class="accordion">Learn More</button>
+                <div class="panel">
+                    <p>Monitor and categorize your daily expenses effortlessly.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h2>Budgeting</h2>
+                <button class="accordion">Learn More</button>
+                <div class="panel">
+                    <p>Set monthly budgets and receive insightful reports.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💰</span>
+                <h2>Savings Goals</h2>
+                <button class="accordion">Learn More</button>
+                <div class="panel">
+                    <p>Plan and track your savings to reach financial success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="testimonials-title">What Our Users Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <p>"FinManage transformed how I handle my money. Simple and effective!"</p>
+                    <h3>- Alex P.</h3>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"The budgeting tools are a game-changer. Highly recommend!"</p>
+                    <h3>- Sarah K.</h3>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I’ve saved more in months than I did in years. Amazing app!"</p>
+                    <h3>- John D.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Master Your Finances?</h2>
+            <a href="login.html" class="cta-button banner-cta">Join Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2025 FinManage. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Simple accordion functionality
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Testimonial slider (auto-rotates every 5 seconds)
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+    </script>
+</body>
+</html>
